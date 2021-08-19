@@ -1,13 +1,12 @@
 import './App.css';
 import { Route } from "react-router-dom";
 import React from 'react';
+import LandingPage from './containers/LandingPage/LandingPage';
 
 function App() {
   return (
     <React.Fragment>
-      <div>
-        <h1>Henry VIdeogames</h1>
-      </div>
+     <Route exact path="/" component={LandingPage}/>
     </React.Fragment>
   );
 }
