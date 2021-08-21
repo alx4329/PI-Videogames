@@ -25,10 +25,7 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       
     },
-    platforms: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+    
     createdByUser: {
       type: DataTypes.STRING,
       defaultValue: 'si'
