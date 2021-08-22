@@ -3,6 +3,7 @@ const { conn } = require('../db.js');
 const { Videogame, Genre, Platform } = require('../db');
 const router = require('express').Router();
 const fetch = require("node-fetch");
+const db = require('../db.js');
 const { API_KEY} = process.env
 
 // The RAWG API returns 40 games per page maximum. 
@@ -66,7 +67,7 @@ router.get('/videogames',async function(req,res){
                     where: {
                         name: game
                     },
-                include: Genre
+                include: {model: Genre, attributes:{exclude:["createdAt","updatedAt"]}, through: {attributes: []} }
                 })
                 if(dbGames.length === 0) res.send(`There's no game like that`)
                 res.json(dbGames)
@@ -105,7 +106,7 @@ router.get('/videogame/:idVideogame', async function(req,res){
                 where: {
                     id: idGame
                 },
-                include: Genre
+                include: {model: Genre, attributes:{exclude:["createdAt","updatedAt"]}, through: {attributes: []} }
             })
         }
         if (gameToDetail.id){
@@ -117,24 +118,34 @@ router.get('/videogame/:idVideogame', async function(req,res){
         console.log(error)
     }
 })
-
+// params genres and platforms are array of id's. 
+// newGenres and newPlatforms are arrays of strings. the names of the new platforms and genres
 router.post('/videogame', async function(req, res) {
-    console.log(req.body); 
-    let { name, description, released, rating, genres, newGenres, platforms, newPlatforms, maxId} =req.body; 
+    // console.log(req.body); 
+    let { name, description, released, rating, genres, newGenres, platforms, newPlatforms, maxId, maxGId, maxPId} =req.body; 
     
     let id = maxId +1;  
+    let idG = maxGId ;  
+    let idP = maxPId ;  
     let genresId = [];
     let platformsId = [];
     if(genres) genresId = genres; 
 
     if (newGenres) {
-        let gens = newGenres.map((item) => Genre.create({name: item}))
-        await Promise.all(gens).then((values)=> values.map((item)=> genresId.push(item.id)))
+        let gens = newGenres.map((item) => {
+            idG++
+            return Genre.create({name: item, id: idG})
+        })
+        await Promise.all(gens).then((values)=> values.map((item)=> {
+            console.log(item)
+            genresId.push(item.id)}))
     }
 
     if(platforms) platformsId = platforms; 
     if(newPlatforms) {
-        let plats = newPlatforms.map((item)=> Platform.create({ name: item}))
+        let plats = newPlatforms.map((item)=> {
+            idP++;
+            return Platform.create({ name: item, id: idP})})
         await Promise.all(plats).then((values)=> values.map((item)=> platformsId.push(item.id)))    
     }
 
@@ -153,20 +164,16 @@ router.post('/videogame', async function(req, res) {
         where: {
             id: newGame.id
         },
-        include: Genre, Platform
+        include: [
+            {model: Genre, attributes:{exclude:["createdAt","updatedAt"]}, through: {attributes: []} },
+            {model: Platform, attributes:{exclude:["createdAt","updatedAt"]},through: {attributes: []} }
+        ],
+        attributes: {exclude:["createdAt","updatedAt"]}
+        
     })
 
     res.json(gameCreated)
 })
-
-// [ ] Un formulario controlado con los siguientes campos
-// Nombre
-// Descripción
-// Fecha de lanzamiento 
-// Rating (numero)
-// [ ] Posibilidad de seleccionar/agregar varios géneros
-// [ ] Posibilidad de seleccionar/agregar varias plataformas
-// [ ] Botón/Opción para crear un nuevo videojuego
 
 
 

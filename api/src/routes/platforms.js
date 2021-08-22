@@ -4,23 +4,23 @@ const { Videogame, Genre, Platform } = require('../db');
 const router = require('express').Router();
 const fetch = require("node-fetch");
 const db = require('../db.js');
-const loadGenres = require('../functions/loadGenres.js')
+const loadPlatforms = require('../functions/loadPlatforms.js')
 
-router.get('/genres', async function (req,res){
+router.get('/platforms', async function (req,res){
     
-    let genres = await Genre.findAll({
+    let platforms = await Platform.findAll({
         attributes: {exclude:["createdAt","updatedAt"]},
         through: {attributes: []}
     });
-    if (genres.length>0)  res.json(genres) 
+    if (platforms.length>0)  res.json(platforms) 
     else {
-        await loadGenres();
-        const gens = await Genre.findAll({
+        await loadPlatforms();
+        const plats = await Platform.findAll({
             attributes: {exclude:["createdAt","updatedAt"]},
             through: {attributes: []}
         });
-        // console.log(gens.length)
-        res.json(gens)
+        // console.log(plats.length)
+        res.json(plats)
     }
 
 })
