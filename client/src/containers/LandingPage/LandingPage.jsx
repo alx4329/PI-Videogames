@@ -1,27 +1,30 @@
-import React, { Component } from "react";
-
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from 'react-router-dom';
 import './LandingPage.css';
+import { getGames } from "../../actions";
 
-
-export class LandingPage extends Component {
+export function LandingPage(){
   
-  render() {
-    
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    dispatch(getGames())
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
     return (
       <div className ='backLP'>
-      
-        <div id="welcome" >Welcome to Henry - Videogames</div>
+      <div className='inline'>
+        <div id='welcome' >Welcome to Henry - Videogames</div>
             <Link to= '/videogames' >
-                  <button id ="start">
-                    <span id ='letra'>START</span>
-                  </button>
+                  <button id ="start" >START</button>
             </Link>
+
+      </div>
         
      
       </div>
     );
-  }
+  
 }
 
 
