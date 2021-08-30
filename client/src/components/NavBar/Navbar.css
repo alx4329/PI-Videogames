@@ -1,5 +1,5 @@
 .navbar {
-    position: fixed;
+    position: absolute;
     height: 10vh;
     width: 100%;
     top: 0;
@@ -9,7 +9,7 @@
     justify-content: space-between;
     align-items: center;    
     box-sizing: border-box;
-    z-index: 2;
+    z-index: 4;
 }
 
 .list {
@@ -20,7 +20,7 @@
     flex-flow: row;
     align-items: center;
     height: 90%;
-    z-index: 2;
+    z-index: 4;
 }
 .list-item {
     margin: 0;
@@ -28,7 +28,7 @@
     height:50%;
     width: auto;
     align-items: center;
-    z-index: 2;
+    z-index: 4;
 }
 
 .list-item a {
@@ -36,11 +36,11 @@
     height: 100%;
     padding: 16px 10px;
     
-    z-index: 2;
+    z-index: 4;
 }
 
 .list-item :hover,
 .list-item .active {
     background-color: #808080;    
-    z-index: 2;
+    z-index: 4;
 }

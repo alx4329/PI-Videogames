@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     height: 100vh;
-  }
+  } */
   
   .form {
     background-color: #15172b;
@@ -133,4 +133,8 @@
       position: absolute;
       top:700px; 
 
-  } */
+  }
+
+  .danger{
+    color: red
+  }

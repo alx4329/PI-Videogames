@@ -65,7 +65,7 @@ export function rootReducer(state = initialState, action){
             
             return {
                 ...state,
-                AllGames: ordered,
+                Games: ordered,
                 changes: !state.changes
             }
         } else {
@@ -73,7 +73,7 @@ export function rootReducer(state = initialState, action){
             // console.log(ordered[0])
             return {
                 ...state,
-                AllGames:ordered,
+                Games:ordered,
                 changes: !state.changes
             }
         }
