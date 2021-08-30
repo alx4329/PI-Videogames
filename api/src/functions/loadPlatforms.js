@@ -26,7 +26,7 @@ const {Platform} = require('../../src/db')
         // console.log(platforms)
     
         let newPlatforms = platforms.map((pla)=> Platform.create({
-        id: pla.id,
+        
         name: pla.name,    
         }))
     

@@ -1,0 +1,29 @@
+.contLB{
+    
+    position: fixed;
+    left: 0%;
+    top:20%;
+    z-index: 3;
+    color: red;
+    border: solid red 1px;
+    width: 10%;
+    height: 80%;
+    
+    
+    
+}
+
+.buttonlb{
+    position: relative;
+    left: -20%;
+    border: solid 1px brown;
+    background: transparent;
+    color: black;
+    z-index: 2;
+}
+
+.buttonlb:hover {
+    border: solid 2px red;
+    font-style: italic;
+    font-weight: 500;
+    }

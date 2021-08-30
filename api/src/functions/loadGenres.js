@@ -25,7 +25,7 @@ const {Genre} = require('../../src/db')
         // console.log(genres)
     
         let newGenres = genres.map((gen)=> Genre.create({
-        id: gen.id,
+        
         name: gen.name,
         image: gen.img
         }))
