@@ -24,17 +24,20 @@ export function LeftSideBar(){
                 key = {index}
                 onClick = {()=>handleClick(gen.name)}
                 className="buttonlb"
-            ><strong>
-
+            >
+            
             {gen.name}
-            </strong>
+            
             </button>
             </ul>
         )
     })
     return (
-        <div className= 'contLB'>
+        <div class= 'contLB'>
+        <div class="dropbtn">Genres</div>
+        <div class="dropdown-content">        
             {renderGenres}
+        </div>
         </div>
     )
 }

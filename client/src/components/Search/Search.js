@@ -20,24 +20,27 @@ export function Search (props) {
     return (
       <div className= 'bar2'>
         <div className = 'showingOptions'>
-                    <button onClick= {()=> dispatch(getGames())}>Show All Games</button>
+                    <button onClick= {()=> dispatch(getGames())}>SHOW ALL GAMES</button>
                     <button onClick= {()=> dispatch(bringGames('api'))}>Show Api Games</button>
                     <button onClick= {()=> dispatch(bringGames('created'))}>Show My Games</button>
 
                 </div>
-        <form className="form-container" onSubmit={(e) =>  handleSubmit(e)}>
-          <div >
+        <form  onSubmit={(e) =>  handleSubmit(e)}>
+                <div className="form-container" >
+          
             <input
               type="text"
-              className="input"
+              className="searchInput"
               autoComplete="off"
-              placeholder= "Who are you looking for?"
+              placeholder= "Find a Game"
               value={gameToFind}
               onChange={(e) => handleChange(e)}
             />
-          <button id="namanyay-search-btn" type="submit">Search</button>
-          </div>
+          <button className="searchButton" type="submit">Search</button>
+          
+                </div>
         </form>
+
         
       </div>
     );

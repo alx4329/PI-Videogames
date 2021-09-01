@@ -1,21 +1,9 @@
-:root{--nyanza: #d8f3dcff;
-    --turquoise-green: #b7e4c7ff;
-    --turquoise-green-2: #95d5b2ff;
-    --ocean-green: #74c69dff;
-    --ocean-green-2: #52b788ff;
-    --illuminating-emerald: #40916cff;
-    --bottle-green: #2d6a4fff;
-    --brunswick-green: #1b4332ff;
-    --dark-jungle-green: #081c15ff;
+  #bac {  
+    background-color: transparent;
+    
+    height:100%;
+    top:20%
   }
-    
-    
-    #bac {  
-      background-color: transparent;
-      
-      height:100%;
-      top:20%
-    }
   
   .page-numbers {
       width: 50%;
@@ -75,7 +63,10 @@
     
   }
   
-  #bac:before {
+  
+  
+  
+  /* #bac:before {
     content: ' ';
     display: block;
     position: fixed;
@@ -84,10 +75,10 @@
     width: 100%;
     height: 100%;
     z-index: 1;
-    /* opacity: 0.8; */
+    
     background-image: url('../../img/LP_pic.jpg');
     background-repeat: no-repeat;
     
     background-size:cover;
     
-  }
+  } */

@@ -7,19 +7,18 @@ import './Navbar.css';
 export default function NavBar() {
     return (
         <header className="navbar">
-            <div>
-                <img id="logoGames" src={Logo} width="40" height="40" alt="" />
-            </div>
+            <img id="logoGames" src={Logo} width="40" height="40" alt="" />
             <nav>
-                <ul className="list">
+                <div className="list">
                     <li className="list-item">
                         <NavLink exact to="/create" >Create</NavLink>
-                        </li>
-                        <li className="list-item">
-                        <NavLink exact to="/" >Home</NavLink>
+                        
+                    </li>
+                    <li className="list-item">
+                    <NavLink exact to="/" >Home</NavLink>
                     
                     </li>
-                </ul>
+                </div>
             </nav>
         </header>
     )

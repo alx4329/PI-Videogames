@@ -9,12 +9,12 @@
                   
     
     position: fixed;
-    top: 20%;
+    top: 13vh;
     right: 0%;
     z-index: 2;
-    border: solid green 1px;
+    
     width: 10%;
-    height: 80%;
+    height: 87vh;
 }
 
 .button {

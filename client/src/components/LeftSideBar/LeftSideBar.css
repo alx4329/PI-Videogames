@@ -1,29 +1,122 @@
 .contLB{
-    
+    overflow: scroll;
+    overflow-x:hidden;
+    direction: rtl;
     position: fixed;
     left: 0%;
-    top:20%;
-    z-index: 3;
-    color: red;
-    border: solid red 1px;
+    top:13vh;
+    z-index: 3;    
+    
     width: 10%;
-    height: 80%;
+    height: 87vh;    
+    width: 10%;
+    flex-direction: column;
     
     
-    
+}
+.contLB::-webkit-scrollbar {     
+	width: 7px;
+    z-index: 3;
+}
+
+.contLB::-webkit-scrollbar-thumb {
+	background: #e7c793;
+	border-radius: 5px;
+    z-index: 3;
+}
+.contLB::-webkit-scrollbar-thumb:hover {
+	background: #ff9d00;
+	border-radius: 5px;
+    z-index: 3;
+    height: 50%;
 }
 
 .buttonlb{
     position: relative;
-    left: -20%;
-    border: solid 1px brown;
+    display: inline;
+    width: 100%;
+    left: 0vw;
+    color: var(--cultured);
+    direction: ltr;
     background: transparent;
-    color: black;
+    border: solid transparent;
     z-index: 2;
+    font-family: 'Bebas Neue';
+    font-size: 1.4rem;
 }
 
 .buttonlb:hover {
-    border: solid 2px red;
+    border-top: solid 2px red;
+    border-bottom: solid 2px red;
     font-style: italic;
     font-weight: 500;
     }
+
+.buttonlb:active{
+    position:relative;
+	top:2px;
+}
+.dropbtn{
+    position: relative;
+    
+    
+    width: 100%;
+    top:0vh;
+    left: 1vw;
+    font-family: 'Bebas Neue';
+    font-size: 2rem;
+    direction: ltr;
+    color:var(--orange-red);
+    
+}
+       /*  .contLB {
+            position: relative;
+            display: inline-block;
+            z-index: 2;
+        }
+
+        .dropbtn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            z-index: 2;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 2;
+        }
+        
+        
+        .dropdown-content ul {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            z-index: 2;
+        }
+        
+       
+        .dropdown-content ul:hover {
+            background-color: #ddd;
+            z-index: 2;
+        }
+        
+        
+        .contLB:hover .dropdown-content {
+            display: block;
+            z-index: 3;}
+        
+        
+        .contLB:hover .dropbtn {
+            background-color: #3e8e41;
+            z-index: 3;
+        }
+
+        */

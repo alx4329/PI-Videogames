@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Press+Start+2P&display=swap');
 
-/* font-family: 'Press Start 2P', cursive;
-font-family: 'Quicksand', sans-serif; */
+
 
 .backLP {
     height: 100vh;
@@ -39,12 +37,18 @@ font-family: 'Quicksand', sans-serif; */
     border-radius: 0.5rem;    
     cursor: pointer;
     color: white;
-    font-family: 'Press Start 2P';
-    font-size: 1.3rem;
+    font-family: 'Bebas Neue';
+    font-size: 3rem;
     position: relative;
     right: 10%;
+    
 }
 
 #start:hover{
     background-color: grey;
+}
+
+.start:active {
+	position:relative;
+	top:1px;
 }

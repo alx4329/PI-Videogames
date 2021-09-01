@@ -9,11 +9,14 @@ import { LeftSideBar } from '../../components/LeftSideBar/LeftSideBar';
 
 export function Home(){
     return(
-    <>        
+    <>    
+    <div className= "HomeBack">
         <Search/>
         <RightSideBar/>
         <Pagination/>
         <LeftSideBar/>
+
+    </div>    
     </>
     )
 }

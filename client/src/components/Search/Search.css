@@ -1,42 +1,103 @@
 .bar2{
     position: absolute;
-    height: 10%;
-    
-    top:10%;
+    height: 8vh;    
+    top:5vh;
     z-index: 2;
     background-color:transparent;
     width: 100%;
     display: inline-flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: space-between;
-    border: solid yellow 1px;
+    
+    align-items: center;
 }
 
 .showingOptions{
-    width: 50%;
+    width: 40%;
     height: 100%;    
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    left: 2%;
+    left:0%;
 }
+
+.showingOptions button {
+	background-color:var(--blue-yonder);
+	border-radius:15px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:'Bebas Neue';
+	font-size:1.5rem;
+	padding:0.2rem 0.4rem;
+	text-decoration:none;
+	text-shadow:0px 1px 15px #2f6627;
+}
+.showingOptions button:hover {
+	background-color:var(--tumbleweed);
+}
+.showingOptions button:active {
+	position:relative;
+	top:1px;
+}
+
 .form-container {
     display:flex;
     flex-direction: row-reverse;
-    height: 100%;
-    align-items: center;
+    height: 4rem;
+    
+    align-items:center;
+    background: var(--blue-yonder);
+    padding: 2px;
+    border-radius: 3rem;
+    
+}
+.form-container:hover > .searchInput {
+    width: 20rem;
     
 }
 
-.form-container button {
+
+
+/* .form-container button {
     margin-right: 10px;
     margin-left: 10px;
     z-index: 2;
-}
-.label {
-    padding-right: 10px;
-    z-index: 2;
+} */
+
+.searchInput {
+    border:none;
+    background: none;
+    outline:none;
+    float:left;
+    padding: 0;
+    color: white;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    transition: 0.4s;
+    /* line-height: 3rem; */
+    width: 0px;
 }
 
+.searchButton {
+    color: white;
+    float: right;
+    width: 5rem;
+    height: 3rem;
+    border-radius: 25%;
+    background: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    font-family: 'Bebas Neue';
+    font-size: 1.2rem;
+}
+
+.searchInput::placeholder{
+    color:lightgrey
+}
 

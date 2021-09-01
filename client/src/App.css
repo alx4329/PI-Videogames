@@ -1,3 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Press+Start+2P&family=Roboto:wght@700&display=swap');
+
+:root{--orange-red: #ff6d1fff;
+  --tumbleweed: #f6ad86ff;
+  --cultured: #edededff;
+  --silver: #c7c7c7ff;
+  --blue-yonder: #5478afff;
+  --bdazzled-blue: #1858acff;
+  --eerie-black: #242423ff;
+  }
+
+body{
+  font-family:  'Bebas Neue', cursive;
+  overflow-x:hidden;
+}
+
+body::-webkit-scrollbar {     
+	width: 7px;
+    z-index: 3;
+}
+body::-webkit-scrollbar-thumb {
+	background: #e7c793;
+
+	border-radius: 5px;
+    z-index: 3;
+}
 .App {
   text-align: center;
 }
