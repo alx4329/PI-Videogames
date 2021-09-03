@@ -24,21 +24,24 @@ export  function GameDetail (props){
         else{
             return (
                 
-                <div className="card">
-                    
-                    <h4 className="card-title">{game.name}</h4>
-                    <img className="iconoClima" src={game.img} width="" height="500" alt="" />
+                <div className="cardDetail">                    
+                    <p className="gameTitle">{game.name}</p>
+
+                    <div className="imageContainer">
+                        <img className="imageDetail" src={game.img} width="" height="500" alt="" />
+                        <img className="imageDetail" src={game.img2} width="" height="500" alt="" />
+
+                    </div>
                 
-                    <div>
-                    <h5>Genres: {stringyfyArray(game.genres)}</h5>
-                    <h5>Platforms: {stringyfyArray(game.platforms)}</h5>
-                    {game.description? <h5>{game.description}</h5> : <span></span>}
-                    <h5>Released: {game.released}</h5>
-                    <h5>Rating: {game.rating}</h5>
+                    <div className="details">
+                        <p>Genres: {stringyfyArray(game.genres)}</p>
+                        <p>Platforms: {stringyfyArray(game.platforms)}</p>
+                        {game.description? <p>Description: {game.description}</p> : <span></span>}
+                        <p>Released: {game.released}</p>
+                        <p>Rating: {game.rating}</p>
                         
                     </div>
                     
-                    <img className="iconoClima" src={game.img2} width="" height="500" alt="" />
                 </div>
             )
 

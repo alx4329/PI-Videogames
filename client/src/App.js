@@ -10,7 +10,7 @@ import {Create} from './components/Create/Create';
 function App() {
   return (
     <React.Fragment>
-    <Route path ={["/videogames",'/create','7videogame']} component={Navbar}/>
+    <Route path ={["/videogames",'/create','7videogame',"/videogame/:id"]} component={Navbar}/>
      <Route exact path="/" component={LandingPage}/>
      <Route exact path="/videogames" component={Home}/>
      <Route exact path="/create" component={Create}/>

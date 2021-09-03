@@ -30,6 +30,7 @@ export function Pagination(props){
     const [gamesPerPage]= useState(15);    
     
     function handleClick(event) {
+        console.log(event.target.id)
         setState({
             ...state,
             currentPage:(Number(event.target.id))
@@ -46,13 +47,16 @@ export function Pagination(props){
     }
     const renderPageNumbers = pageNumbers.map(number => {
         return (
-            <li
-                className = {()=> state.currentPage ===number ? "activePage": ""}
-                key={number}
-                id={number}
+            <li                
+                               >
+                <div
+                 key={number}                
+                id={number}                
                 onClick={handleClick}
                 >
                 {number}
+
+                </div>
             </li>
         );
     });
@@ -60,7 +64,10 @@ export function Pagination(props){
     return (
         <div id ='bac'>
             <ul className='page-numbers'>
+                
+
                 {renderPageNumbers}
+                
             </ul>
             <div className='container'>
                 <ul className="cards">

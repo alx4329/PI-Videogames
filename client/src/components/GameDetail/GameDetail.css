@@ -1,20 +1,47 @@
-.card {
-    margin: 20px;
-    width: 18rem;
-  }
-  
-  .card-title {
-    margin-bottom: 15px;
-  }
-  
-  #closeIcon {
+
+  .cardDetail {
+    
+    position:absolute;
+    width: 100%;
+    height: 100%;
     display: flex;
-    justify-content: flex-end;
-    margin-right: 8px;
-    margin-top: 8px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    
   }
   
-  .card-body {
-    margin-top: 0px !important;
-    padding-top: 0px !important;
+  .gameTitle {
+    
+    position: absolute;
+    top:-5vh;
+    height: 10vh;
+    font-size: 3rem;
+    font-family: 'Bebas Neue', cursive;
   }
+  
+  .imageContainer{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    top: 10vh;
+    height: 60%;
+    width: 90%;
+  } 
+  .details{
+    position: absolute;
+    bottom: -5%;
+    width: 90%;
+  }
+  .imageDetail{
+    width: 30%;
+    height: 80%;
+    object-fit: cover;
+    /* margin:0rem 5rem 0rem 5rem; */
+
+  }
+ .details{
+   font-size: 1.1rem;
+ }

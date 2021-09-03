@@ -15,7 +15,7 @@ export default function NavBar() {
                         
                     </li>
                     <li className="list-item">
-                    <NavLink exact to="/" >Home</NavLink>
+                    <NavLink exact to="/videogames" >Home</NavLink>
                     
                     </li>
                 </div>

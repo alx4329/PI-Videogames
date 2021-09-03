@@ -125,81 +125,96 @@ export function Create(props) {
   
 
   return (
-    <div className="form">
-    <h3 className ="title" >Create Your Game</h3>
-    <form  onSubmit ={(e)=> handleSubmit(e) }>
-
-      <label>Name</label>
-      <input className="input-container" type="text" placeholder="Mia's Game" name = "name" value = {state.name} onChange={(e)=> handleChange(e) }></input>
-
-      <div class="cut"></div>
-
-      <label>Description</label>
-      <input className="input-container" name = "description" placeholder="Describe it" value = {state.description} onChange={(e)=> handleChange(e) }></input>
+    <div className= "formContainer">
       
+          <h3 className ="title" >Create Your Game</h3>
+      <div className="form">
+        <form  onSubmit ={(e)=> handleSubmit(e) }>
 
-      <label>Released</label>
-      <input className={errors.released && 'danger'} name = "released" placeholder="Date of release" value = {state.released} onChange={(e)=> handleChange(e) }/>{errors.released &&(<p className='danger'>{errors.released}</p>)}
-      
+          <label>Name</label>
+          <input className="input-container" type="text" placeholder="Mia's Game" name = "name" value = {state.name} onChange={(e)=> handleChange(e) }></input>
 
-      <label>Rating</label>
-      <input className={errors.rating && 'danger'}  type="text" placeholder="Rank it" name = "rating" value = {state.rating} onChange={(e)=> handleChange(e) }/>{errors.rating &&(<p className='danger'>{errors.rating}</p>)}
-      
+          <label>Released</label>
+          <input className={errors.released && 'danger'} name = "released" placeholder="Date of release" value = {state.released} onChange={(e)=> handleChange(e) }/>{errors.released &&(<p className='danger'>{errors.released}</p>)}
+          
 
-      <label>Genres</label>
-      <div className="genres" >
-        {
-          reduxGenres.map((item,index)=>{
-            return(
-              <li key={index}>
-                <input
-                  type="checkbox"
-                  id={item.id}
-                  name={item.name}
-                  value={item.name}
-                  onChange = {()=>handleGenresOnCheck(item.id, index)}
-                ></input>
-                {item.name}
-              </li>
-            )
-          })
-        }
+          <label>Rating</label>
+          <input className={errors.rating && 'danger'}  type="text" placeholder="Rank it" name = "rating" value = {state.rating} onChange={(e)=> handleChange(e) }/>{errors.rating &&(<p className='danger'>{errors.rating}</p>)}
+          
+
+          <label>Description</label>
+          <input className="input-container" name = "description" placeholder="Describe it" value = {state.description} onChange={(e)=> handleChange(e) }></input>
+          
+
+          
+
+          <div className="genres" >
+          <label>Genres</label>
+          <div className="genresli">
+
+            {
+              reduxGenres.map((item,index)=>{
+                return(
+                  <li key={index}>
+                    <input
+                      type="checkbox"
+                      id={item.id}
+                      name={item.name}
+                      value={item.name}
+                      onChange = {()=>handleGenresOnCheck(item.id, index)}
+                    ></input>
+                    {item.name}
+                  </li>
+                )
+              })
+            }
+          </div>
+          <label>New Genre</label>
+          <div className = "newProp">
+
+            <input className="input-container" type="text" name = "genreToAdd" value = {genreToAdd} onChange={(e)=> setGenreToAdd(e.target.value) }></input>
+            <button className ="add" onClick = {(e)=>{
+              e.preventDefault();
+              addNewGenre(genreToAdd)}}>Add Genre</button>
+          </div>
+          </div>
+          
+          <div className="platforms" >
+          <label>Platforms</label>
+          <div className="platformsli" >
+            {
+              reduxPlatforms.map((item,index)=>{
+                return(
+                  <li key={index}>
+                    <input
+                      type="checkbox"
+                      id={item.id}
+                      name={item.name}
+                      value={item.name}
+                      onChange = {()=>handlePlatformsOnCheck(item.id, index)}
+                    ></input>
+                    {item.name}
+                  </li>
+                )
+              })
+            }
+
+          </div>
+          <label>New Platform</label>
+          <div className="newProp">
+            <input className="input-container" type="text" name = "platfomrToAdd" value = {platformToAdd} onChange={(e)=> setPlatformToAdd(e.target.value) }></input>
+            <button className="add" onClick = {(e)=>{
+              e.preventDefault();
+              addNewPlatform(platformToAdd)}}>Add Platform</button>
+
+          </div>
+          </div>
+
+
+          
+          <button className="submit" type = "submit">Create</button>
+        </form>
       </div>
-      <label>New Genre</label>
-      <input className="input-container" type="text" name = "genreToAdd" value = {genreToAdd} onChange={(e)=> setGenreToAdd(e.target.value) }></input>
-      <button onClick = {(e)=>{
-        e.preventDefault();
-        addNewGenre(genreToAdd)}}>Add Genre</button>
-      
-      <label>Platforms</label>
-      <div className="platforms" >
-        {
-          reduxPlatforms.map((item,index)=>{
-            return(
-              <li key={index}>
-                <input
-                  type="checkbox"
-                  id={item.id}
-                  name={item.name}
-                  value={item.name}
-                  onChange = {()=>handlePlatformsOnCheck(item.id, index)}
-                ></input>
-                {item.name}
-              </li>
-            )
-          })
-        }
-      </div>
-      <label>New Platform</label>
-      <input className="input-container" type="text" name = "platfomrToAdd" value = {platformToAdd} onChange={(e)=> setPlatformToAdd(e.target.value) }></input>
-      <button onClick = {(e)=>{
-        e.preventDefault();
-        addNewPlatform(platformToAdd)}}>Add Platform</button>
-
-
-
-      <button className="submit" type = "submit">Create</button>
-    </form>
     </div>
   )
 };

@@ -50,6 +50,6 @@
 
 .list-item :hover,
 .list-item .active {
-    background-color: var(--tumbleweed);    
+    background-color: var(--silver);    
     z-index: 4;
 }
