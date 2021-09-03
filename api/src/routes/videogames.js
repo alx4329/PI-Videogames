@@ -11,7 +11,7 @@ const searchGame = require('../functions/searchGame')
 //As we want to do the pagination in our API, we do all the requests at the beginning. 
 // So we define the function 'getSomeGames' which receives a number of the minimal amount of games we will need in our API.
 //  Then it calls the RAWG API the necessary times to get at least that number, and returns an array of games.
-const gamesToPaginate = 100
+const gamesToPaginate = 40
 
 
 

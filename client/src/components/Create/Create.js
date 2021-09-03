@@ -40,10 +40,14 @@ export function Create(props) {
     // eslint-disable-next-line no-unused-vars
     const [checkedPlatformState, setCheckedPlatformState] = useState([]);
 
-    // useEffect(()=>{
-    //   let val = new Array(reduxGenres.length).fill(false);
-    //   setCheckedGenreState(val)
-    // },[reduxGenres])
+    useEffect(()=>{
+      let val = new Array(reduxGenres.length).fill(false);
+      setCheckedGenreState(val)
+    },[reduxGenres])
+    useEffect(()=>{
+      let val = new Array(reduxPlatforms.length).fill(false);
+      setCheckedPlatformState(val)
+    },[reduxPlatforms])
     
     
     // let updatedCheckedState;
@@ -64,7 +68,7 @@ export function Create(props) {
           genres: [...state.genres, genreId]
         })
       }
-      // console.log(state)
+      console.log(state)
     }
     
     const handlePlatformsOnCheck = (platformId, position) => {
@@ -93,10 +97,10 @@ export function Create(props) {
         ...state,
         [e.target.name] : e.target.value
     })
-    setErrors(validate({
-      ...state,
-      [e.target.name]: e.target.value
-    }))
+    // setErrors(validate({
+    //   ...state,
+    //   [e.target.name]: e.target.value
+    // }))
   }
 
 
@@ -118,6 +122,7 @@ export function Create(props) {
   }
 
   async function handleSubmit(event) {
+    console.log('estoy')
     event.preventDefault();
     dispatch(postNewGame(state))
   }
@@ -127,12 +132,19 @@ export function Create(props) {
   return (
     <div className= "formContainer">
       
-          <h3 className ="title" >Create Your Game</h3>
-      <div className="form">
-        <form  onSubmit ={(e)=> handleSubmit(e) }>
+    <h3 className ="title" >Create Your Game</h3>
+    <div className="form">
+        <form  onSubmit ={(e)=> {console.log(state) 
+        handleSubmit(e)} }>
 
           <label>Name</label>
           <input className="input-container" type="text" placeholder="Mia's Game" name = "name" value = {state.name} onChange={(e)=> handleChange(e) }></input>
+
+          
+
+          <label>Description</label>
+          <input className="input-container" name = "description" placeholder="Describe it" value = {state.description} onChange={(e)=> handleChange(e) }></input>
+          
 
           <label>Released</label>
           <input className={errors.released && 'danger'} name = "released" placeholder="Date of release" value = {state.released} onChange={(e)=> handleChange(e) }/>{errors.released &&(<p className='danger'>{errors.released}</p>)}
@@ -140,12 +152,6 @@ export function Create(props) {
 
           <label>Rating</label>
           <input className={errors.rating && 'danger'}  type="text" placeholder="Rank it" name = "rating" value = {state.rating} onChange={(e)=> handleChange(e) }/>{errors.rating &&(<p className='danger'>{errors.rating}</p>)}
-          
-
-          <label>Description</label>
-          <input className="input-container" name = "description" placeholder="Describe it" value = {state.description} onChange={(e)=> handleChange(e) }></input>
-          
-
           
 
           <div className="genres" >
