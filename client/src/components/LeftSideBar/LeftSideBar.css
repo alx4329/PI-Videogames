@@ -56,7 +56,7 @@
     position:relative;
 	top:2px;
 }
-.dropbtn{
+/* .dropbtn{
     position: relative;
     
     
@@ -68,7 +68,7 @@
     direction: ltr;
     color:var(--orange-red);
     
-}
+} */
        /*  .contLB {
             position: relative;
             display: inline-block;

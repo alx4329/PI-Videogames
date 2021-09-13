@@ -1,19 +1,20 @@
 import React from 'react'; 
 import { Link } from 'react-router-dom';
 import './VideoCard.css'
-
+import defImg from '../../img/defaultImg.jpg'
 
 export function VideoCard(Properties){
     
     
     return (
         <div className ='card'>
-                        <Link to = {`/videogame/${Properties.Game.id}`}>
-                            <p className= "card-title">{Properties.Game.name}</p>
+                        <Link className= "card-title" to = {`/videogame/${Properties.Game.id}`}>
+                            <p >{Properties.Game.name}</p>
                         </Link>
                     
-                        <img className='image' src={Properties.Game.img} alt ="Not  found"></img>
-                        <p>Genres: {stringyfyGenres(Properties.Game.genres)}</p>
+                         {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
+                        <img className='image' src={Properties.Game.img?Properties.Game.img:defImg} alt="No image"/>
+                        <p>{stringyfyGenres(Properties.Game.genres)}</p>
                     
             </div>
 

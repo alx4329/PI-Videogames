@@ -24,17 +24,21 @@ searchGame= async function(number,game){
     
     await Promise.all(requests)
     // console.log(answers.length)
+    // console.log(answers)
     let valuesToSend =[];
     let values = answers.map((item)=>{
-        for(let i=0; i< item.results.length ; i++){
-            let obj = {
-                id: item.results[i].id,
-                name: item.results[i].name,
-                img: item.results[i].background_image,
-                genres: item.results[i].genres,
-                rating: item.results[i].rating,
-            }                
-            valuesToSend.push(obj)
+        if(item.results){
+            for(let i=0; i< item.results.length ; i++){
+                let obj = {
+                    id: item.results[i].id,
+                    name: item.results[i].name,
+                    img: item.results[i].background_image,
+                    genres: item.results[i].genres,
+                    rating: item.results[i].rating,
+                }                
+                valuesToSend.push(obj)
+            }
+
         }
     })
     let dbGames = await Videogame.findAll({

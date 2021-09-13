@@ -39,14 +39,14 @@ export function rootReducer(state = initialState, action){
     if(action.type === BRING_GAMES){
         if(action.payload === 'created') {            
             
-        let games = state.AllGames.filter((item)=> (item.creadoPorUsuario))
+        let games = state.AllGames.filter((item)=> (item.createdByUser))
         return {
             ...state,
             Games: games,
             changes: !state.changes
                 };
             } else { 
-                let games = state.AllGames.filter((item)=> (!item.creadoPorUsuario))
+                let games = state.AllGames.filter((item)=> (!item.createdByUser))
                 return {
                     ...state,
                     Games: games,

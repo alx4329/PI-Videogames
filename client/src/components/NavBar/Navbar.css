@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Press+Start+2P&family=Roboto:wght@700&display=swap');
+
 .navbar {
     position: absolute;
     height: 5vh;
@@ -40,11 +42,14 @@
     
     .list-item a:link{
         color: var(--orange-red);
+        
         font-family: 'Bebas Neue', cursive;
+        text-decoration: none;
     }
     .list-item a:visited{
     font-family: 'Bebas Neue', cursive;
-    color: var(--orange-red)
+    color: var(--orange-red);
+    text-decoration: none;
 }
 
 

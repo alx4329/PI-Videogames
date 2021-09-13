@@ -12,7 +12,11 @@ export function RightSideBar(){
     return(
         
         <div className ='orderBy'>
-            <div className="dropbtn">Order By</div>
+            <div className="dropbtn">
+                
+                Sort By
+                
+            </div>
             <button className="buttonlb" onClick = {()=>dispatch(orderByAlphabet('ascending'))}>A-Z</button>
             <button className="buttonlb" onClick = {()=>dispatch(orderByAlphabet('descending'))}>Z-A</button>
             <button className="buttonlb" onClick = {()=>dispatch(orderByRating('RA'))}>Lowest Rating</button>
