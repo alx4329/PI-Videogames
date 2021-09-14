@@ -5,7 +5,7 @@ import './GameDetail.css'
 import { useDispatch, useSelector } from 'react-redux';
 
 
-export  function GameDetail (props){
+export function GameDetail (props){
     const id= props.match.params.id;
     const dispatch = useDispatch();
     const [loading, setLoading] = useState(true)
@@ -18,9 +18,9 @@ export  function GameDetail (props){
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
     let game = useSelector( state => state.GameToDetail);
-    
-    
-        if(loading) return (<p>Loading...</p>)
+    console.log(game)
+        // if(game) setLoading(false);
+        if(loading) {return (<p>Loading...</p>)}
         else{
             return (
                 
@@ -50,7 +50,8 @@ export  function GameDetail (props){
     
 }
 function stringyfyArray(array){
-    // console.log(array)
+    
+
     let String = array.map((item)=> item.name)
     return String.join(', ')
 }

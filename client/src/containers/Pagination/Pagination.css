@@ -19,11 +19,18 @@
     flex-direction: row;  
     
   }
-  .image {
+  /* .image {
     border: solid 5px black;
     position: relative;
     
     width: 100%;
+  } */
+
+  .Loading{
+    position: relative;
+    display: flex;
+    height: 10rem;
+    width: 15rem;
   }
   .card{
     position: relative;

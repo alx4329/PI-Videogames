@@ -3,7 +3,7 @@ import {  useDispatch, useSelector } from "react-redux";
 import './Pagination.css';
 import { getGames } from '../../actions/index';
 import { VideoCard } from '../../components/VideoCard/VideoCard';
-
+import Loading from '../../img/LoadingCar.gif'
 export function Pagination(props){
     const dispatch = useDispatch();
     useEffect(()=>{
@@ -30,7 +30,7 @@ export function Pagination(props){
     const [gamesPerPage]= useState(15);    
     
     function handleClick(event) {
-        console.log(event.target.id)
+        // console.log(event.target.id)
         setState({
             ...state,
             currentPage:(Number(event.target.id))
@@ -47,10 +47,9 @@ export function Pagination(props){
     }
     const renderPageNumbers = pageNumbers.map(number => {
         return (
-            <li                
-                               >
+            <li>
                 <div
-                 key={number}                
+                key={number}                
                 id={number}                
                 onClick={handleClick}
                 >
@@ -71,12 +70,13 @@ export function Pagination(props){
             </ul>
             <div className='container'>
                 <ul className="cards">
-                    <>{currentGames.length === 0?<p>"No games matching"</p>: currentGames.map((Game)=><VideoCard Game={Game}/>)}</>
+                    <>{currentGames.length === 0?<img className="Loading" src={Loading}/>: currentGames.map((Game)=><VideoCard Game={Game}/>)}</>
                 </ul>
             </div>
         </div>
     )
 
 }
+//<p>"No games matching"</p>
 
 export default (Pagination)

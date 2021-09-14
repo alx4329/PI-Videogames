@@ -6,7 +6,7 @@
 .orderBy {
     display: flex;
     flex-direction: column;
-                  
+    align-content: center;
     
     position: fixed;
     top: 13vh;
@@ -34,7 +34,19 @@
     height: 10%;
     border: solid blue 1px;
 }
-
+.dropbtn{
+    position: relative;
+    justify-content: center;
+    display: inline-flex;
+    width: 100%;
+    
+    font-family: 'Bebas Neue';
+    font-size: 2rem;
+    direction: ltr;
+    color:var(--orange-red);
+    
+}
+  
 
 
 /* .buttotn:before, .button:after {

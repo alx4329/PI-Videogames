@@ -41,9 +41,9 @@ router.get('/videogame/:idVideogame', async function(req,res){
         let request = await fetch(`https://api.rawg.io/api/games/${idGame}?key=${API_KEY}`)
         let game = await request.json()
         
-        // console.log(game)
+        //  console.log(game)
         
-        if(game){
+        if(game.platforms){
             platforms = game.platforms.map((plat)=>plat.platform);
             game.description_raw ? description=game.description_raw : description = "No description for this one";
             let gameToSend = {
@@ -63,10 +63,12 @@ router.get('/videogame/:idVideogame', async function(req,res){
                 where: {
                     id: idGame
                 },
-                include: {model: Genre, attributes:{exclude:["createdAt","updatedAt"]}, through: {attributes: []} }
-            })
+                include: [
+                    {model: Genre, attributes:{exclude:["createdAt","updatedAt"]}, through: {attributes: []} },
+                    {model: Platform, attributes:{exclude:["createdAt","updatedAt"]},through: {attributes: []} }
+                ],            })
             if (dbGame.length>0){
-                res.send(dbGame)}
+                res.send(dbGame[0])}
                 else res.status(404).send({error: "Game not found"})
         } 
         

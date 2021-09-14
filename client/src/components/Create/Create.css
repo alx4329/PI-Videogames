@@ -2,14 +2,18 @@
   
   list-style:  none;
     background-color: #000;
+    background-image: url('../../img/LP_pic.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     justify-content: center;
     height: 100vh;
     position:fixed;
     width: 100vw;
-    font-family: 'Roboto';
-    font-size: 1rem;
-    color: White;
+    font-family: 'Bebas Neue';
+    font-size: 1.6rem;
+    color: white;
     overflow: scroll;
     overflow-x: hidden;
   }
@@ -18,22 +22,42 @@
     box-sizing: border-box;
   }
   .form {
-    background-color: #15172b;
+    background-color: transparent; 
     border-radius: 20px;
+    border: solid 1rem var(--blue-yonder);
     box-sizing: border-box;
     height: 85vh;
-    width: 90vw;
+    width: 60vw;
     padding: 20px;
     position:absolute;
-    top: 10vh;
+    top: 10vh;  
+  }
+  
+  .items{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item{
+    display: flex;
+    align-items: center;
+    
     
   }
   
+  .item-double{
+    display: flex;
+    align-items: center;
+    }
+  .item-double div{
+    margin-right: 2rem;
+  }
+
   .title {
     position: relative;
-    top:-3vh;;
+    top:0vh;;
     color: #eee;
-    font-family: sans-serif;
+    font-family: 'Bebas Neue';
     font-size: 36px;
     font-weight: 600;
     margin-top: 30px;
@@ -47,92 +71,51 @@
     margin-top: 10px;
   }
   
-  .input-container {
-    
+  .input-container {  
     position: relative;
     width: 100%;
-  }
-  
-  .ic1 {
-    margin-top: 40px;
-  }
-  
-  .ic2 {
-    margin-top: 30px;
-  }
-  
-  .input {
-    background-color: #303245;
-    border-radius: 12px;
-    border: 0;
-    box-sizing: border-box;
+    background-color: var(--blue-yonder);
+    border-radius: 12px;   
     color: #eee;
-    font-size: 18px;
-    height: 100%;
-    outline: 0;
-    padding: 4px 20px 0;
+    font-size: 1.2rem;
+    
     width: 100%;
   }
   
   
   
-  .cut-short {
-    width: 50px;
-  }
-  
-  .input:focus ~ .cut,
-  .input:not(:placeholder-shown) ~ .cut {
-    transform: translateY(8px);
-  }
-  
-  .placeholder {
-    color: #65657b;
-    font-family: sans-serif;
-    left: 20px;
-    line-height: 14px;
-    pointer-events: none;
-    position: absolute;
-    transform-origin: 0 50%;
-    transition: transform 200ms, color 200ms;
-    top: 20px;
-  }
+  .input-container::placeholder{
+    color: white;
+  } 
   
   .input:focus ~ .placeholder,
   .input:not(:placeholder-shown) ~ .placeholder {
     transform: translateY(-30px) translateX(10px) scale(0.75);
   }
   
-  .input:not(:placeholder-shown) ~ .placeholder {
-    color: #808097;
-  }
-  
-  .input:focus ~ .placeholder {
-    color: #dc2f55;
-  }
-  
   .submit {
-    background-color:var(--orange-red);
-    border-radius: 12px;
+    background-color:var(--bdazzled-blue);
+    border-radius: 1rem;
     border: 0;
     box-sizing: border-box;
     color: #eee;
     cursor: pointer;
-    font-size: 18px;
-    height: 50px;
-    margin-top: 38px;
+    font-size: 1.5rem;
+    position: relative;
+    width: 60%;
+    height: 5vh;
+    margin-top: 1rem;
     outline: 0;
     text-align: center;
-    width: 90vh;
-    position: absolute;
-    right: 5vh;
-    bottom: 1.8vh;
+    left: 20%;
+    
   }
   
-  .submit:active {
+  /* .submit:active {
     background-color: #06b;
     position: relative;
     top:1px;
-  }
+  } */
   .genres{
     display: flex;
     flex-direction: column;
@@ -142,29 +125,25 @@
     flex-direction: column;
     
   }
-  .genresli {
+  .checkli {
       background:var(--blue-yonder);
       display: flex;
       flex-wrap: wrap ;
       margin: 1rem     ;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
+      font-family: 'Roboto';
+      color:black;
       padding: 1vh;
       border-radius: 20px;
       box-sizing: border-box;
     }
-    .platformsli {
-      background:var(--blue-yonder);
-      display: flex;
-      flex-wrap: wrap ;     
-      margin: 1rem     ;
-      font-size: 0.8rem;
-      padding: 1vh;
-      border-radius: 20px;
-      box-sizing: border-box;
-  }
+    
 
   .danger{
-    color: red
+    color: red;
+    background-color:var(--tumbleweed);
+    width: 40%;
+    font-size: 1rem;
   }
 
   .newProp{
@@ -173,7 +152,7 @@
 
   .add{
     box-shadow:inset 0px 1px 0px 0px #fce2c1;
-    background:linear-gradient(to bottom, #ffc477 5%, #fb9e25 100%);
+    background:linear-gradient(to bottom, #ffc477 5%, var(--orange-red) 100%);
     background-color:#ffc477;
     border-radius:6px;
     border:1px solid #eeb44f;
