@@ -11,9 +11,9 @@ export function VideoCard(Properties){
                         <Link className= "card-title" to = {`/videogame/${Properties.Game.id}`}>
                             <p >{Properties.Game.name}</p>
                         </Link>
-                    
                          {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
                         <img className='image' src={Properties.Game.img?Properties.Game.img:defImg} alt="No image"/>
+                        <div className="rating">{Properties.Game.rating}</div> 
                         <p>{stringyfyGenres(Properties.Game.genres)}</p>
                     
             </div>
