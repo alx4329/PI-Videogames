@@ -55,6 +55,9 @@
 }
 .form-container:hover > .searchInput {
     width: 20rem;
+    /* background: var(--blue-yonder);
+    padding: 2px;
+    border-radius: 3rem; */
     
 }
 

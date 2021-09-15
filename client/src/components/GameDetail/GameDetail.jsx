@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { bringGameToDetail } from '../../actions';
-import './GameDetail.css'
+import './GameDetail.css';
+import Loading from '../../img/LoadingCar.gif'
+import defImg from '../../img/defaultImg.jpg'
 
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -19,33 +21,46 @@ export function GameDetail (props){
     },[])
     let game = useSelector( state => state.GameToDetail);
     console.log(game)
-        // if(game) setLoading(false);
-        if(loading) {return (<p>Loading...</p>)}
-        else{
-            return (
-                
-                <div className="cardDetail">                    
-                    <p className="gameTitle">{game.name}</p>
+        
+    // eslint-disable-next-line jsx-a11y/alt-text
+    if(loading) {return (
+            <div className="cardDetail">
+                {/*  eslint-disable-next-line jsx-a11y/alt-text */}
+                <img className="Loading" src={Loading}/>
 
-                    <div className="imageContainer">
-                        <img className="imageDetail" src={game.img} width="" height="500" alt="" />
-                        <img className="imageDetail" src={game.img2} width="" height="500" alt="" />
-
-                    </div>
-                
-                    <div className="details">
-                        <p>Genres: {stringyfyArray(game.genres)}</p>
-                        <p>Platforms: {stringyfyArray(game.platforms)}</p>
-                        {game.description? <p>Description: {game.description}</p> : <span></span>}
+            </div>
+            )}
+    else{
+        return (
+            
+            <div className="cardDetail">                    
+                <p className="gameTitle">{game.name}</p>
+                <div className="details">
+                    <div className="subtitle">
                         <p>Released: {game.released}</p>
                         <p>Rating: {game.rating}</p>
-                        
                     </div>
+                    <p >Genres: {stringyfyArray(game.genres)}</p>
+                    <p >To play on: {stringyfyArray(game.platforms)}</p>
+
+                </div>
+                <div className="description">
+                    {game.description? <p>Description: {game.description}</p> : <span></span>}
                     
                 </div>
-            )
 
-        }
+                <div className="imageContainer">
+                    <img className="imageDetail" src={game.img? game.img:defImg}  alt="" />
+                    
+                    {game.img2?<img className="imageDetail" src={game.img2}  alt="" />:""}
+
+                </div>
+            
+                
+            </div>
+        )
+
+    }
 
     
 }

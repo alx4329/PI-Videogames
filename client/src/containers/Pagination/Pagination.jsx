@@ -70,10 +70,12 @@ export function Pagination(props){
             </ul>
             <div className='container'>
                 <ul className="cards">
+                    {/* eslint-disable-next-line jsx-a11y/alt-text */}
                     <>{currentGames.length === 0?<img className="Loading" src={Loading}/>: currentGames.map((Game)=><VideoCard Game={Game}/>)}</>
                 </ul>
             </div>
         </div>
+        
     )
 
 }

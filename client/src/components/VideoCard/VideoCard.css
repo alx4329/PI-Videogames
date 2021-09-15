@@ -41,9 +41,12 @@
     color:white
 }
 .card:hover p{
-    color:grey
+    color:black
 }
-
+.card:active{
+    position: relative;
+    top:3px
+}
 .card-title:visited{
     text-decoration: none;
 /* font-family: 'Bebas Neue', cursive; */

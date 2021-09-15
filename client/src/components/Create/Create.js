@@ -53,7 +53,6 @@ export function Create(props) {
     const handleGenresOnCheck = (genreId, position) => {
       if(checkedGenreState[position]=== true) {
         checkedGenreState[position] = !checkedGenreState[position]
-
         let nuevoArr = state.genres.filter((item)=> item !== genreId )
         setState({
           ...state,
@@ -66,7 +65,8 @@ export function Create(props) {
           genres: [...state.genres, genreId]
         })
       }
-      // console.log(state)
+      
+      
     }
     
     const handlePlatformsOnCheck = (platformId, position) => {
@@ -137,25 +137,25 @@ export function Create(props) {
       <div className="form">
         <form className="items" onSubmit={(e)=> {handleSubmit(e)} }>
           <div className='item'>
-            <label>Name</label>
+            <label>Name:</label>
             <input className="input-container" type="text" placeholder="Mia's Game" name = "name" value = {state.name} onChange={(e)=> handleChange(e) }></input>
 
           </div>
           <div className='item-double'>
           <div className='item'>
-            <label>Released</label>
+            <label>Released:</label>
             <input type="date" className='input-container'/>
 
           </div>
           <div className='item'>
-            <label>Rating</label>
+            <label>Rating:</label>
             <input className={errors.rating ? 'danger' : 'input-container'}  type="text" placeholder="Rank it" name = "rating" value = {state.rating} onChange={(e)=> handleChange(e) }/>{errors.rating &&(<p className='danger'>{errors.rating}</p>)}
 
           </div>
           </div>
           
           <div className='item'>
-            <label>Description</label>
+            <label>Description:</label>
             <input className="input-container" name = "description" placeholder="Describe it" value = {state.description} onChange={(e)=> handleChange(e) }></input>
           </div>
           
@@ -163,7 +163,7 @@ export function Create(props) {
           
 
           <div className="genres" >
-          <label>Genres</label>
+          <label>Genres:</label>
           <div className="checkli">
 
             {
@@ -183,7 +183,7 @@ export function Create(props) {
               })
             }
           </div>
-          <label>New Genre</label>
+          <label>New Genre:</label>
           <div className = "newProp">
 
             <input className="input-container" type="text" name = "genreToAdd" value = {genreToAdd} onChange={(e)=> setGenreToAdd(e.target.value) }></input>
@@ -194,7 +194,7 @@ export function Create(props) {
           </div>
           
           <div className="platforms" >
-          <label>Platforms</label>
+          <label>Platforms:</label>
           <div className="checkli" >
             {
               reduxPlatforms.map((item,index)=>{
@@ -214,7 +214,7 @@ export function Create(props) {
             }
 
           </div>
-          <label>New Platform</label>
+          <label>New Platform:</label>
             <div className="newProp">
               <input className="input-container" type="text" name = "platfomrToAdd" value = {platformToAdd} onChange={(e)=> setPlatformToAdd(e.target.value) }></input>
               <button className="add" onClick = {(e)=>{

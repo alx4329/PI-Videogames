@@ -21,10 +21,28 @@
     border-radius: 5px;
     box-sizing: border-box;
   }
+
+  .formContainer::-webkit-scrollbar {     
+    width: 7px;
+      z-index: 3;
+      transition: 0.8s;
+  }
+  
+  .formContainer::-webkit-scrollbar-thumb {
+    background: #e7c793;
+    border-radius: 5px;
+      z-index: 3;
+  }
+  .formContainer::-webkit-scrollbar-thumb:hover {
+    background: #ff9d00;
+    border-radius: 5px;
+      z-index: 3;
+      
+  }
   .form {
     background-color: transparent; 
     border-radius: 20px;
-    border: solid 1rem var(--blue-yonder);
+    border: solid 0.5rem var(--blue-yonder);
     box-sizing: border-box;
     height: 85vh;
     width: 60vw;
@@ -63,13 +81,7 @@
     margin-top: 30px;
   }
   
-  .subtitle {
-    color: #eee;
-    font-family: sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    margin-top: 10px;
-  }
+  
   
   .input-container {  
     position: relative;
@@ -80,6 +92,8 @@
     font-size: 1.2rem;
     
     width: 100%;
+    margin-left: 1rem
+    
   }
   
   
@@ -166,6 +180,7 @@
     text-decoration:none;
     text-shadow:0px 1px 0px #cc9f52;
     width: 20rem;
+    margin-left: 1rem
   }
 
   .add:hover {
