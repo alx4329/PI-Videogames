@@ -17,10 +17,10 @@ export function RightSideBar(){
                 Sort By
                 
             </div>
-            <button className="buttonlb" onClick = {()=>dispatch(orderByAlphabet('ascending'))}>A-Z</button>
-            <button className="buttonlb" onClick = {()=>dispatch(orderByAlphabet('descending'))}>Z-A</button>
-            <button className="buttonlb" onClick = {()=>dispatch(orderByRating('RA'))}>Lowest Rating</button>
-            <button className="buttonlb" onClick = {()=>dispatch(orderByRating('RD'))}>Biggest Rating </button>
+            <button className="buttonrb" onClick = {()=>dispatch(orderByAlphabet('ascending'))}>A-Z</button>
+            <button className="buttonrb" onClick = {()=>dispatch(orderByAlphabet('descending'))}>Z-A</button>
+            <button className="buttonrb" onClick = {()=>dispatch(orderByRating('RA'))}>Lowest Rating</button>
+            <button className="buttonrb" onClick = {()=>dispatch(orderByRating('RD'))}>Biggest Rating </button>
         </div>
         
     )

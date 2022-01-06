@@ -19,7 +19,7 @@ export function LeftSideBar(){
     
     const renderGenres = genres.map((gen,index)=>{
         return (
-            <ul>
+            
             <button
                 key = {index}
                 onClick = {()=>handleClick(gen.name)}
@@ -29,7 +29,7 @@ export function LeftSideBar(){
             {gen.name}
             
             </button>
-            </ul>
+            
         )
     })
     return (

@@ -47,5 +47,33 @@
     
 }
   
+.buttonrb{
+    border: solid 1px rgb(0, 217, 255);
+    position: relative;
+    display: inline;
+    width: 100%;
+    left: 0vw;
+    color: var(--cultured);
+    direction: ltr;
+    background: transparent;
+    border: solid transparent;
+    z-index: 2;
+    font-family: 'Bebas Neue';
+    font-size: 1.4rem;
+    text-align: right;
+}
+
+.buttonrb:hover {
+    border-top: solid .125rem red;
+    border-bottom: solid .125rem red;
+    font-style: italic;
+    font-weight: 500;
+    }
+
+.buttonrb:active{
+    position:relative;
+	top:.125rem;
+}
+
 
 

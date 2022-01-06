@@ -30,17 +30,4 @@ export function LandingPage(){
 
 
 export default (LandingPage);
-// function mapStateToProps(state) {
-//   return {
-//     favoriteMovies: state.moviesFavourites}
-// }
 
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     // removeMovieFavorite: (imdbID) => dispatch(removeMovieFavorite(imdbID)),
-    
-//   };
-// }
-
-// export default connect(  mapStateToProps,  mapDispatchToProps
-// )(ConnectedList);

@@ -32,6 +32,7 @@
     height: 10rem;
     width: 15rem;
   }
+  /* editar este .card */
   .card{
     position: relative;
     width: 20%;
@@ -52,19 +53,19 @@
     
   }
   .container::-webkit-scrollbar {     
-    width: 7px;
+    width: 0.4375rem;
       z-index: 3;
       transition: 0.8s;
   }
   
   .container::-webkit-scrollbar-thumb {
     background: #e7c793;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
       z-index: 3;
   }
   .container::-webkit-scrollbar-thumb:hover {
     background: #ff9d00;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
       z-index: 3;
       
   }

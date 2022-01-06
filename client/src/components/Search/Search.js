@@ -20,11 +20,10 @@ export function Search (props) {
     return (
       <div className= 'bar2'>
         <div className = 'showingOptions'>
-                    <button onClick= {()=> dispatch(getGames())}>SHOW ALL GAMES</button>
-                    <button onClick= {()=> dispatch(bringGames('api'))}>Show Api Games</button>
-                    <button onClick= {()=> dispatch(bringGames('created'))}>Show My Games</button>
-
-                </div>
+          <button onClick= {()=> dispatch(getGames())}>SHOW ALL GAMES</button>
+          <button onClick= {()=> dispatch(bringGames('api'))}>Show Api Games</button>
+          <button onClick= {()=> dispatch(bringGames('created'))}>Show My Games</button>
+        </div>
         <form  onSubmit={(e) =>  handleSubmit(e)}>
                 <div className="form-container" >
           

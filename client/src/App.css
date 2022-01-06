@@ -8,11 +8,14 @@
   --bdazzled-blue: #1858acff;
   --eerie-black: #242423ff;
   --letra: 'Bebas Neue',cursive;
+
+  
   }
 
 body{
   font-family:  'Bebas Neue', cursive;
   overflow-x:hidden;
+  font-size: 16px;
 }
 
 body::-webkit-scrollbar {     
@@ -61,5 +64,22 @@ body::-webkit-scrollbar-thumb {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 992px) {
+  :root{
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 760px) {
+  :root{
+    font-size: 12px;
+  }
+}
+@media (max-width: 576px) {
+  :root{
+    font-size: 8px;
   }
 }

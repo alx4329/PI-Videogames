@@ -82,14 +82,14 @@ export function rootReducer(state = initialState, action){
     if (action.type === ORD_RA){        
         let games = state.AllGames;
         if (action.payload === 'RA'){
-            orderByNumber(games,'rating',1,true)
+            orderByNumber(games,'rating',1)
             return {
                 ...state,
                 Games: games,           
                 changes: !state.changes
             }}
         else {            
-            orderByNumber(games,'rating',-1,true)
+            orderByNumber(games,'rating',-1)
             return {
                 ...state,
                 Games: games,           

@@ -2,6 +2,7 @@
 
 .card{
     position: relative;    
+    width: 18rem;
     height: 22rem;    
     border-radius: 1.2rem;
     background:var(--silver);    
@@ -12,7 +13,6 @@
     overflow:hidden;
     font-size: 1.2rem;    
     margin: 1rem;
-    width: 18rem;
 }
 .image{
     
@@ -23,17 +23,19 @@
     width: 18rem;
     display: flex;
     justify-content: center;
-     object-fit: cover;
+    object-fit: cover;
     
 }
 .card-title:link{
+    
     position: relative;
-    top:-22px;
+    
     font-size: 1.5rem;
     color: white;
     font-family: 'Bebas Neue', cursive;
     text-decoration: none;
     display: inline;
+    justify-content: center;
     z-index: 1;
 }
 .card p{
@@ -50,8 +52,8 @@
 }
 .card-title:visited{
     text-decoration: none;
-/* font-family: 'Bebas Neue', cursive; */
-color: var(--orange-red)
+    /* font-family: 'Bebas Neue', cursive; */
+    color: var(--orange-red)
 }
 
 .rating{
@@ -68,4 +70,32 @@ color: var(--orange-red)
     align-items: center;
     font-size: 1.3rem;
     color: black;
+    vertical-align: middle;
 }
+
+
+
+
+@media (max-width: 992px) {
+    .card{
+        width: 14rem;
+        height: 20rem;    
+    }
+    .image{
+        width: 14rem;
+        height: 20rem;    
+        
+    }
+}
+
+@media (max-width: 760px) {
+    .card{
+        width: 12rem;
+        height: 18rem;    
+    }
+    .image{
+        width: 12rem;
+        height: 18rem;    
+    }
+  }
+
