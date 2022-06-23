@@ -65,7 +65,7 @@
     justify-content: space-around;
     position: absolute;
     top: 30vh;
-    height: 70%;
+    height: 40%;
     width: 90%;
     
   } 
@@ -82,7 +82,7 @@
   .description{
     
     position: absolute;
-    top: 100vh;
+    top: 80vh;
     width: 70%;
     color: white;
     font-size: 1.2rem;

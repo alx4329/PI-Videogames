@@ -83,3 +83,8 @@ body::-webkit-scrollbar-thumb {
     font-size: 8px;
   }
 }
+@media (max-width: 360px) {
+  :root{
+    font-size: 6px;
+  }
+}
