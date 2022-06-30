@@ -27,7 +27,7 @@ const loadPlatforms = require('./src/functions/loadPlatforms')
 
 app.engine('html', nunjucks.render)
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
+conn.sync({ force: false }).then(() => {
   loadGenres();
   loadPlatforms();
   server.listen(process.env.PORT, () => {
