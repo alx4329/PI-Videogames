@@ -13,14 +13,6 @@ export const CREATE_GAME = 'CREATE_GAME'
 
 export function getGames(game){
     if(game){
-        // return async function(dispatch){
-        //     return fetch(`http://localhost:3001/videogames?game=${game}`)
-        //     .then(response => response.json())
-        //             .then(json => {                        
-        //                 dispatch({ type: SEARCH_GAME,
-        //                 payload: json  });
-        //                 });
-        // 
         return async function (dispatch){
             return await axios.get(`/videogames?game=${game}`)
             .then(res=>{
@@ -31,14 +23,6 @@ export function getGames(game){
             })
         }
     } else {
-        // return async function(dispatch){
-        //     return fetch("http://localhost:3001/videogames")
-        //         .then(response => response.json())
-        //         .then(json => {
-        //             dispatch({ type: GET_GAMES,
-        //             payload: json  });
-        //             });
-        // }
         return async function(dispatch){
             return await axios.get(`/videogames?game=${game}`)
             .then(res=>{
@@ -52,15 +36,6 @@ export function getGames(game){
 }
 
 export function bringGameToDetail(id){
-    // return function(dispatch){
-    //     return fetch(`http://localhost:3001/videogame/${id}`)
-    //         .then(response => response.json())
-    //                     .then(json => {
-    //                         console.log(json)
-    //                         dispatch({ type: TO_DETAIL,
-    //                         payload: json  });
-    //                         });
-    // }
     return async function(dispatch){
         return await axios.get(`/videogame/${id}`)
         .then(res=>{
@@ -98,14 +73,6 @@ export function orderByRating(op){
 }
 
 export function getGenres(){
-    // return function(dispatch){
-    //     return fetch("http://localhost:3001/genres")
-    //         .then(response => response.json())
-    //         .then(json => {
-    //             dispatch({ type: GET_GENRES,
-    //             payload: json  });
-    //             });
-    // }
     return async function(dispatch){
         return await axios.get(`/genres`)
         .then(res=>{
@@ -126,14 +93,6 @@ export function filtByGenre(value){
 }; 
 
 export function getPlats(){
-    // return function(dispatch){
-    //     return fetch("http://localhost:3001/platforms")
-    //         .then(response => response.json())
-    //         .then(json => {
-    //             dispatch({ type: GET_PLATFORMS,
-    //             payload: json  });
-    //             });
-    // }
     return async function(dispatch){
         return await axios.get(`/platforms`)
         .then(res=>{
@@ -147,21 +106,6 @@ export function getPlats(){
 
 export function postNewGame(state){
     return function(dispatch){
-        // let config = {
-        //     method: 'POST',
-        //     headers: {
-        //         'Accept': 'application/json',
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(state)
-        // }
-        // return fetch("http://localhost:3001/videogame",config)
-        //     .then(response => response.json())
-        //     .then( json => {
-        //         console.log(json)
-        //         dispatch({ type: CREATE_GAME,
-        //                 payload: json  });
-        //     })
         axios.post(`/videogame`)
         .then(res=>{
             dispatch({ type: CREATE_GAME,

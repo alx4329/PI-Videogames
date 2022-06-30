@@ -18,12 +18,9 @@
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
-const {Genre, Platform} = require('./src/db')
 const { conn } = require('./src/db.js');
 const express = require('express'); 
 const app = express();
-const fetch = require("node-fetch");
-const { API_KEY} = process.env;
 const nunjucks = require('nunjucks');
 const loadGenres = require('./src/functions/loadGenres')
 const loadPlatforms = require('./src/functions/loadPlatforms')
@@ -33,7 +30,7 @@ app.engine('html', nunjucks.render)
 conn.sync({ force: true }).then(() => {
   loadGenres();
   loadPlatforms();
-  server.listen(3001, () => {
+  server.listen(process.env.PORT, () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
 });
