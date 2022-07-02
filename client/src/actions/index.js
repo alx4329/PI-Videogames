@@ -24,7 +24,7 @@ export function getGames(game){
         }
     } else {
         return async function(dispatch){
-            return await axios.get(`/videogames?game=${game}`)
+            return await axios.get(`/videogames`)
             .then(res=>{
                 dispatch({
                     type:GET_GAMES,
